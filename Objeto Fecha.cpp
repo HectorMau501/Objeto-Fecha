@@ -1,19 +1,64 @@
-// Objeto Fecha.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
 
 #include <iostream>
+#include <stdlib.h>
+#include "Date.h"
+#include <memory>
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+
+
+/*
+Date a(04, 07, 2022);
+Date b(a+10);
+cout << a << endl;
+cout << b << endl;
+*/
+
+
+
+/*
+//puntero inteligente
+ std::unique_ptr<int> smartIntPtr(new int);
+     * smartIntPtr = 42;
+
+     cout << "Integer value is" << *smartIntPtr << endl;
+     std::unique_ptr<Date> smartDatePtr(new Date(04, 07, 2022));
+     smartDatePtr->formaDate();
+
+     int a = 5 , b = 6;
+     int c = a + b;
+ */
+
+
+
+
+
+
+ /*
+ Date a(04, 07, 2022);
+ a.increment();
+ a.increment();
+ ++a;
+ --a;
+ a++;
+ a--;
+ cout << a.formaDate() << endl;
+ */
+
+
+
+
+
+
+ /*
+int b = 0;
+int c = b++;
+int d = ++b;
+cout << c << " " << d << " "<< b <<endl;
+*/
+
+std::cout << "\n";
+system("pause");
 }
-
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
-
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
