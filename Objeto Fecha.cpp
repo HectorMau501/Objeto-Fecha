@@ -73,18 +73,18 @@ cout << b << endl;
 
 
 
-/*
+
 //puntero inteligente
  std::unique_ptr<int> smartIntPtr(new int);
      * smartIntPtr = 42;
 
-     cout << "Integer value is" << *smartIntPtr << endl;
+     std::cout << "Integer value is" << *smartIntPtr <<std:: endl;
      std::unique_ptr<Date> smartDatePtr(new Date(04, 07, 2022));
      smartDatePtr->formaDate();
 
      int a = 5 , b = 6;
      int c = a + b;
- */
+ 
 
 
 
