@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+#include <sstream>
 #include <iostream>
 
 
@@ -12,8 +14,10 @@ private:
 	//Constructor,Metodos y operadores de clase Fecha
 public:
 
-	//Contructor para fecha
-	Date(int inMonth, int inDay, int inYear) : month(inMonth), day(inDay), year(inYear) {};
+	
+	Date(){}
+	~Date(){}
+	Date(int inMonth, int inDay, int inYear) : month(inMonth), day(inDay), year(inYear) {}; //Contructor para fecha
 
 	//Retorna el dia
 	void formaDate()
@@ -22,34 +26,45 @@ public:
 		//return day;
 	}
 
+	//Operador de conversion
+	operator const char* ()
+	{
+		std::ostringstream formatDate;
+		formatDate << month << "/" << day << "/" << year;
+		dateInString = formatDate.str();
+		return dateInString.c_str();
+	}
+
+	void AddMonth()
+	{
+		month++;
+	}
+
+	void AddYear()
+	{
+		year++;
+	}
+
 	void IncremMonth()
 	{
 		month++;
 		day = 1;
 	}
+
 	void IncremDay()
 	{
 		day++;
 	}
 
 
-
-
-
-
-
-
-
 	//Aumenta el dia
-	void incrementday()
+	void AddDay()
 	{
 		if (day == 31 && month == 12)
 		{
 			day = 1;
 			month = 1;
 			year++;
-
-
 		}
 		else
 		{
@@ -137,8 +152,7 @@ public:
 
 
 
-
-	void DecremYear()
+	void ResteDay()
 	{
 		if (day == 1 && month == 1)
 		{
@@ -219,9 +233,15 @@ public:
 	}
 
 
+	void RestMes()
+	{
+		month--;
+	}
 
-
-
+	void RestYear()
+	{
+		year--;
+	}
 
 
 
@@ -229,14 +249,12 @@ public:
 
 
 		
-	/*
+	
 	Date operator +(int daysToAdd) {
 		Date newDate(month, day+daysToAdd, year);
 		return newDate;
 	}
-	*/
-
-
+	
 
 
 	//Operadores 
@@ -247,7 +265,7 @@ public:
 		Prefix es si ponemos si ponemos antes del objeto
 	*/
 
-	/*
+	
 	Date& operator ++()
 	{
 		++day;
@@ -259,12 +277,12 @@ public:
 		--day;
 		return *this;
 	}
-	*/
+	
 
 	//Esto es el operador Profix
 	/*Es despues de la variable*/
 
-	/*
+	
 	Date& operator ++(int)
 	{
 		Date copy(month,day,year);
@@ -278,18 +296,8 @@ public:
 		--day;
 		return copy;
 	}
-	*/
 
-	/*/
-	//Operador de conversion
-	operator const char* ()
-	{
-		std::ostringstream formatDate;
-		formatDate << month << "/" << day << "/" << year;
-		dateInString = formatDate.str();
-			return dateInString.c_str();
-	}
-	*/
-
+	
+	
 };
 
